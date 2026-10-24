@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yourchoice | AI-Powered Shopping & Smart Decision Assistant</title>
+    <script>
+      (function() {
+        try {
+          const theme = localStorage.getItem('yourchoice_theme') || localStorage.getItem('aether_theme');
+          const isLight = theme === 'light';
+          const root = document.documentElement;
+          if (isLight) {
+            root.classList.remove('dark');
+            root.setAttribute('data-theme', 'light');
+            root.style.colorScheme = 'light';
+          } else {
+            root.classList.add('dark');
+            root.setAttribute('data-theme', 'dark');
+            root.style.colorScheme = 'dark';
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
